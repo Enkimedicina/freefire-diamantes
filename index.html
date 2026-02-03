@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GarenaHub | Generador de Diamantes Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0b0e11;
+        font-family: 'Roboto', sans-serif;
+        color: #e0e0e0;
+        overflow-x: hidden;
+      }
+      .font-orbitron { font-family: 'Orbitron', sans-serif; }
+      .font-mono { font-family: 'Roboto Mono', monospace; }
+      
+      /* Custom Animations */
+      @keyframes pulse-cyan {
+        0%, 100% { box-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff; }
+        50% { box-shadow: 0 0 20px #00f2ff, 0 0 30px #00f2ff; }
+      }
+      .animate-pulse-cyan {
+        animation: pulse-cyan 2s infinite;
+      }
+      
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+      .scanline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.05), transparent);
+        animation: scanline 8s linear infinite;
+        pointer-events: none;
+        z-index: 50;
+      }
+
+      /* Custom Scrollbar for Hacker Aesthetic */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #00f2ff;
+        border-radius: 10px;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              spaceBlack: '#0b0e11',
+              neonCyan: '#00f2ff',
+              fireOrange: '#ff4500',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- Script de entrada esencial para evitar pantalla negra -->
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
